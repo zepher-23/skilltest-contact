@@ -4,7 +4,7 @@ const update = (props) => {
 const [updateUser,setUpdateUser] = useState(null)
 const [name,setName] = useState("Select User")
 const [phone,setPhone]  = useState("select User")
-    const {display,handleUpdate,setDisplay,clicked,users} = props
+    const {updateDisplay,handleUpdate,setUpdateDisplay,clicked,users} = props
     
    useEffect(() => {
     users.map(user=>{
@@ -20,13 +20,12 @@ const [phone,setPhone]  = useState("select User")
    
     const displayNone = (e) =>{
       
-      setDisplay('none')
-      console.log(display)
+      setUpdateDisplay('none')
     }
     
   return(
     
-    <div style={{display:display,position:'absolute',top:'20%',left:'40%',width:'20%',height:'50%',backgroundColor:'white',borderRadius:'10px',flexDirection:'column',alignItems:'center',justifyContent:'center' }}>
+    <div style={{display:updateDisplay,position:'absolute',top:'20%',left:'40%',width:'20%',height:'50%',backgroundColor:'white',borderRadius:'10px',flexDirection:'column',alignItems:'center',justifyContent:'center' }}>
 <label for="name" style={{color:'black'}}>User Name </label>
 
 <input type="text" style={{width:'70%'}} placeholder={name} name="name"  />

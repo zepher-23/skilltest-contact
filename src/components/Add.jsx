@@ -4,18 +4,17 @@ const Add = (props) => {
   const [addUser,setAddUser] = useState(null)
   const [name,setName] = useState("Enter Name")
   const [phone,setPhone]  = useState("Enter Phone")
-  const {display,action,handleAdd,setDisplay,clicked,users} = props
+  const {addDisplay,action,handleAdd,setAddDisplay,clicked,users} = props
       
      //function to remove the popup
       const displayNone = (e) =>{
         
-        setDisplay('none')
-        console.log(display)
+        setAddDisplay('none')
       }
       
     return(
       
-      <div style={{display:display,position:'absolute',top:'20%',left:'40%',width:'20%',height:'50%',backgroundColor:'white',borderRadius:'10px',flexDirection:'column',alignItems:'center',justifyContent:'center' }}>
+      <div style={{display:addDisplay,position:'absolute',top:'20%',left:'40%',width:'20%',height:'50%',backgroundColor:'white',borderRadius:'10px',flexDirection:'column',alignItems:'center',justifyContent:'center' }}>
   <label for="name" style={{color:'black'}}>User Name </label>
   
   <input type="text" style={{width:'70%'}} placeholder={name} name="name"  />

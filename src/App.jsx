@@ -17,7 +17,8 @@ function App() {
   const [message, setMessage] = useState(null) // Holds message for the popup
   const [action, setAction] = useState(null) // Holds the type of action performed by the user
   const [show,setShow] = useState(false) //Triggers the snackbar after an operation
-  const [display, setDisplay] = useState('none') // Toggles the display value of the popups
+  const [updateDisplay, setUpdateDisplay] = useState('none') // Toggles the display value of the popups
+  const [addDisplay, setAddDisplay] = useState('none')
 
   //Code to fetch the contact details from the API
   useEffect(() => {
@@ -112,14 +113,14 @@ const handleUpdate = (event) => {
 //Function to trigger update popup
 const updatePop = () =>{
   setAction('Update')
-setDisplay('flex');
+  setUpdateDisplay('flex');
 
 }
 
 //Function to trigger add popup
 const addPop = () =>{
 setAction('Add')
-setDisplay('flex')
+setAddDisplay('flex')
 
 }
 
@@ -139,8 +140,8 @@ const triggerShow =()=>{
         <div className="container" style={{ height: '80%', width: '90%', backgroundColor: 'white' }}>
           {/* ________________________POPUPS____________________________ */}
 
-        <Update display={display} action={action} handleUpdate={handleUpdate} setDisplay={setDisplay} clicked={clicked} users={users} />
-       <AddPop display={display} action={action} handleAdd={handleAdd} setDisplay={setDisplay} clicked={clicked} users={users} />
+        <Update updateDisplay={updateDisplay} action={action} handleUpdate={handleUpdate} setUpdateDisplay={setUpdateDisplay} clicked={clicked} users={users} />
+       <AddPop addDisplay={addDisplay} action={action} handleAdd={handleAdd} setAddDisplay={setAddDisplay} clicked={clicked} users={users} />
        {/* _________________________________________________________POPUPS END__________________________________________________ */}
        
        {/*___________________________ Display screen of the UI___________________________ */}
